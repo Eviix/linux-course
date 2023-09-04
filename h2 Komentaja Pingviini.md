@@ -19,6 +19,7 @@ Microa on kevyt tekstieditori ja sen asentaminen oli todella yksinkertaista.
 ### sudo apt-get install micro
 Tällä komennolla sain micron asennettua.
  ![Add file: Upload](Images/install-micro.png)
+
 Micron käyttäminen oli myös hyvin yksinkertaista. 
 ### micro linux-course.txt
 Tällä komennolla sain luotua tekstitiedoston ja sen tallentaminen tapahtui painamalla Ctrl + S ja jos halusin pois editorista niin piti painaa Ctrl + Q.
@@ -53,7 +54,61 @@ Asensin nämä kolme ohjelmaa samaan aikaa käyttmällä komentoa:
 
 ## d) FHS:
 
+Käytin testeissä:
 
+- ls /
+- ls /home/
+- ls /etc/
+- ls /media/
+- ls /var/log/
+
+Näillä sain luettelon kunkin hakemiston sisällöstä:
+
+![Add file: Upload](Images/Fhs.png)
+
+Jos halusin saada syvempää tietoa hakemistojen sisällöistä, niin pystyin tekemään sen kirjoittamalla esim: ls/home/daniel ja sain luettelon sen sisällöstä -> Desktop  Documents  Downloads  linux-course.txt  Music  paivat  Pictures  Public  Templates  Videos
+
+
+## e) grep komennon käyttö:
+
+grep komentoa voidaan käyttää esimerkiksi tällä tavalla: grep "linux" *.txt
+
+Tällä komennolla saadaan haettua kaikista tekstitiedostoista "linux" sanan sisältävän tiedoston. Minun tapauksessa se löysi "linux-kurssi".
+
+Voit tehdä myös kohdistetun haun suoraan tekstitiedostoon. Se tapahtuu seuraavasti: grep "linux" linux-course.txt
+
+## f) Pipe. Näytä esimerkki putkista
+
+Putkia voidaan käyttää esimerkiksi tällä tavalla: ls *.txt | sort
+
+Tämä järjestää saadut tulokset aakkojärjestykseen. Minun tapauksessa se antoi seuraavat tulokset:
+
+- linux-course.txt
+- pingviini.txt
+- tehtavat.txt
+
+## g) Tukki
+
+Tässä kaksi yksinkertaista esimerkkiä:
+
+### Onnistunut:
+sudo apt update  # Päivitä pakettilista
+
+![Add file: Upload](Images/Onnistunut.png)
+
+Tämän jälkeen voidaan viellä päivittää asennetut paketit:
+
+sudo apt upgrade
+
+### Epäonnistunut:
+sudo apt-get install linux_kurssi_syksy_23
+
+![Add file: Upload](Images/Epäonnistunut.png)
+
+Vastaukseksi saatiin: E: Unable to locate package linux_kurssi_syksy_23
+
+## Lähteet:
+https://terokarvinen.com/2020/command-line-basics-revisited/?fromSearch=command%20line%20basics%20revisited
 
 
 
