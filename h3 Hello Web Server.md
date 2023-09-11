@@ -560,3 +560,6 @@ Content-Length: 648
 
 Jos nämä siis ymmärtää, niin sivun sisältöä ei tarvitse pakolla edes ladata, jotta tietoa voisi tulkita.
 
+## Lähteet:
+Install Apache Web Server on Ubuntu, Tero Karvinen. https://terokarvinen.com/2008/05/02/install-apache-web-server-on-ubuntu-4/ Luettu 11.9.2023
+
