@@ -5,4 +5,5 @@
 Artikkelissa käydään kaikki oleellinen läpi ja toimii hyvänä oppaana, kun halutaan perustaa virtuaalipalvelin (VPS), käyttäen DigitalOceania ja DNS-nimen määrittämiseen NameCheap-palvelua.
 Artikkelissa korostetaa vahvojen salasanojen käytön tärkeyttä, eli aina pitää käyttää hyviä salasanoja, jotka eivät ole helposti murrettavissa. Github tarjoaa näitä palveluita koulutuspakettina opiskelijoille, jolla pääsee tutustumaan ilmaiseksi VPS:ään ja .me-verkkotunnukseen.
 
-## a Virtuaalipalvelimen hankkiminen
+## a) Virtuaalipalvelimen hankkiminen
+
