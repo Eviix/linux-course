@@ -58,14 +58,20 @@ Aloitin kirjautumalla minun käyttäjälle ssh daniel@172.105.81.54, jonka jälk
 
 Tämän jälkeen menin Apache-verkkosivujen juurihakemistoon, joka on "cd /var/www/html". Juurihakemistossa on index.html oletustiedosto, jonka menin muokkaamaan komennolla: "sudo nano index.html".
 Muokkasin nopeasti sivusta oman näköisen ja tämän jälkeen laitoin tulimuuri asetukset päälle:
-### sudo ufw allow 80/tcp
+### sudo ufw allow 80/tcp (Avasin palvelimen tulimuuriin portin 80.)
 ### sudo ufw enable
 
 Tämän jälkeen sivustolle pitäisi päästä julkisesti: http://172.105.81.54/ (jos serveri on käynnissä).
 
 ![Add file: Upload](Images/Public_works.JPG)
 
-## d) 
+Huomasin, että sivusto ei ole secure, mutta en saanut sitä ratkaistua.
 
+## d) Etsi merkkejä murtautumisyrityksistä.
+Omana palvelimena käytin Linodea, joka tarjoaa Cloud Firewall -palvelun. Tämän avulla voidaan valvota verkkoliikennettä ja myös lisätä sääntöjä, jotka estävät liikennettä tietyistä IP-osoitteista tai porteista.
+![Add file: Upload](Images/Linode_firewall.JPG)
+Testatsin myös journalctl komentoa, jolla voidaan tarkastella palvelinlokeja esim. kirjautumisyrityksiltä.
+![Add file: Upload](Images/Palvelinlokit.jpg)
 
-
+## Lähteet:
+First Steps on a New Virtual Private Server – an Example on DigitalOcean and Ubuntu 16.04 LTS, Tero Karvinen. [https://terokarvinen.com/2008/05/02/install-apache-web-server-on-ubuntu-4/](https://terokarvinen.com/2017/first-steps-on-a-new-virtual-private-server-an-example-on-digitalocean/)https://terokarvinen.com/2017/first-steps-on-a-new-virtual-private-server-an-example-on-digitalocean/ Luettu 18.9.2023
