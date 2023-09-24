@@ -16,8 +16,45 @@ Storage: 512GB SSD M.2 2280 PCIe® 3.0x4 NVMe®
 # h5 Nimittäin
 
 ## x) Lue ja tiivistä: 
-Karvinen 2016: New Default Website with Apache2 – Show your homepage at top of example.com, no tilde
+### New Default Website with Apache2 – Show your homepage at top of example.com, no tilde
 
-Karvinen 2018: Name Based Virtual Hosts on Apache – Multiple Websites to Single IP Address
+Apache2 asennus:
+```
+$ sudo apt-get update
+$ sudo apt-get -y install apache2
+```
+Apachesta on hyvä tietää se, että se voi pyörittää useaa virtuaalipalvelinta samanaikaisesti ja ne pystytään määritellä polussa "http://etc/apache2/sites-available/"
 
-Apache Software Foundation 2023: Name-based Virtual Host Support
+Uusi virtuaalipalvelin voidaan luoda seuraavasti:
+
+Esimerkki: sudoedit /etc/apache2/sites-available/daniel.conf 
+```
+<VirtualHost *:80>
+  DocumentRoot /home/daniel/public_html/
+  <Directory /home/daniel/public_html/>
+    Require all granted
+  </Directory>
+</VirtualHost>
+```
+Se saadaan otettua käyttöön seuraavalla komennolla: "sudo a2ensite tero.conf"
+
+Nyt voidaan siirtyä kotisivun luomiseen:
+```
+Kotihakemistoon siiryminen tapahtuu "cd" komennolla.
+Public_html-hakemisto: mkdir public_html/
+Siirtyminen sinne tapahtuu: cd public_html/
+Lopuksi luodaan index.html --> muokkaamiseen voidaan käyttää nano komentoa, eli "nano index.html".
+Nyt voidaan mennä kotisivuille localhostin kautta ja se voidaan validoida sivulla: https://validator.w3.org/
+```
+
+### Name Based Virtual Hosts on Apache – Multiple Websites to Single IP Address
+Käytännössä sama logiikka kuin edellisessä artikkelissa.
+
+Lisäämällä rivejä "sudoedit /etc/hosts", nimipalveluida voidaan tällä simuloida.
+### Name-based Virtual Host Support
+- IP-pohjaisessa virtuaalipalvelussa jokaiselle palvelimelle tarvitaan oma IP-osoite, kun taas nimipohjaisessa virtuaalipalvelussa useat eri palvelimet voivat jakaa saman IP-osoitteen.
+- Palvelimelle saapuvat pyynnöt käsitellään ensin IP-osoitteen ja portin perusteella, sitten verrataan ServerName- ja ServerAlias-ohjeita.
+
+## a) Domain-nimi  
+
+
