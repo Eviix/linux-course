@@ -14,3 +14,10 @@ Max Memory :16GB soldered memory, not upgradable
 Storage: 512GB SSD M.2 2280 PCIe® 3.0x4 NVMe®
 
 # h5 Nimittäin
+
+## x) Lue ja tiivistä: 
+Karvinen 2016: New Default Website with Apache2 – Show your homepage at top of example.com, no tilde
+
+Karvinen 2018: Name Based Virtual Hosts on Apache – Multiple Websites to Single IP Address
+
+Apache Software Foundation 2023: Name-based Virtual Host Support
