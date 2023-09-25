@@ -113,8 +113,11 @@ Sain tästä ainakin selville sen, että IP-osoite on 172.105.81.54 ja Kysely ke
 
 ## Lähteet:
 Karvinen 2016: https://terokarvinen.com/2016/02/16/new-default-website-with-apache2-show-your-homepage-at-top-of-example-com-no-tilde/ Luettu 24.9.2023
+
 Karvinen 2018: https://terokarvinen.com/2018/04/10/name-based-virtual-hosts-on-apache-multiple-websites-to-single-ip-address/ Luettu 24.9.2023
+
 Apache Software Foundation 2023: https://httpd.apache.org/docs/2.4/vhosts/name-based.html Luettu 24.9.2023
+
 https://www.namecheap.com/
 
 
