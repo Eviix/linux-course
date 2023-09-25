@@ -108,8 +108,53 @@ Sain tästä ainakin selville sen, että IP-osoite on 172.105.81.54 ja Kysely ke
 ![Add file: Upload](Images/Dig_komento.jpg)
 
 ## c) Etusivu uusiksi
+Päivitin ensiksi paketit jonka jälkeen loin VirtualHostin --> sudoedit /etc/apache2/sites-available/daniel.conf
+```
+<VirtualHost *:80>
+ DocumentRoot /home/daniel/public_html/
+ <Directory /home/daniel/public_html/>
+   Require all granted
+ </Directory>
+</VirtualHost>
+```
+Tämän jälkeen tarkistim, että se löytyy oikeasta paikasta
 
+![Add file: Upload](Images/Tarkastus_conf.jpg)
 
+Seuraavaksi otin käyttöön VirtualHostin komennolla:
+```
+sudo a2ensite daniel.conf
+```
+Otin myös vanhan pois päältä:
+```
+sudo a2dissite 000-default.conf
+```
+Lopulta käynnistin palvelimen uudelleen:
+```
+sudo service apache2 restart
+```
+
+Sain virheilmoituksen, kun koitin tehdä sudo a2ensite daniel.conf & sudo a2dissite 000-default.conf:
+```
+sudo a2ensite daniel.conf
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_ADDRESS = "fi_FI.UTF-8",
+	LC_NAME = "fi_FI.UTF-8",
+	LC_MONETARY = "fi_FI.UTF-8",
+	LC_PAPER = "fi_FI.UTF-8",
+	LC_IDENTIFICATION = "fi_FI.UTF-8",
+	LC_TELEPHONE = "fi_FI.UTF-8",
+	LC_MEASUREMENT = "fi_FI.UTF-8",
+	LC_TIME = "fi_FI.UTF-8",
+	LC_NUMERIC = "fi_FI.UTF-8",
+	LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("en_US.UTF-8").
+Site daniel already enabled
+```
 
 ## Lähteet:
 Karvinen 2016: https://terokarvinen.com/2016/02/16/new-default-website-with-apache2-show-your-homepage-at-top-of-example-com-no-tilde/ Luettu 24.9.2023
