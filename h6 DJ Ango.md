@@ -128,8 +128,10 @@ $ ./manage.py runserver
 - Asiakkaan lisämisen jälkeen näkymä näyttää tältä:
 ![Add file: Upload](Images/customer_add.jpg)
 
-### c) Tee Djangon tuotantotyyppinen asennus omalle, paikalliselle virtuaalikoneellesi
+### c) Tee Djangon tuotantotyyppinen asennus omalle, paikalliselle virtuaalikoneellesi.
 
+- Luettuani artikkelin "Deploy Django 4 - Production Install", pääsin vihdoin aloittamaan seuraavan tehtävän.
+- 
 
 
 ## Lähteet:
