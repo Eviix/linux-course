@@ -74,3 +74,67 @@ $ ./manage.py runserver
 ```
 - Lopuksi menemme --> http://127.0.0.1:8000/
 ![Add file: Upload](Images/test_django.jpg)
+
+### b) esimerkkitietokanta ja Django admin-liiyymä
+
+- Jatkoin tehtävää tekemällä ensiksi päivitykset tietokantaan:
+```
+$ ./manage.py makemigrations
+$ ./manage.py migrate
+```
+![Add file: Upload](Images/Update_database.jpg)
+
+- Seuraavaksi lähdin lisäämään käyttäjää (superkäyttäjä):
+```
+$ ./manage.py createsuperuser 
+```
+- Täytin tarvittavat tiedot käyttäjälle ja loin sen, jonka jälkeen pystyin kirjautumaan sisään -> http://127.0.0.1:8000/admin/
+![Add file: Upload](Images/Create_superuser.jpg)
+
+- Seuraavaksi vuorossa on asiakastietokannan luominen:
+```
+## Aloitetaan luomalla crm/ kansio
+$ ./manage.py startapp crm
+## 'crm' rivin lisääminen
+$ micro daniel/settings.py
+```
+- Modelien lisäys:
+```
+$ micro crm/models.py
+from django.db import models
+
+class Customer(models.Model):
+   name = models.CharField(max_length=300)
+```
+- Tehdään migraatiot:
+```
+$ ./manage.py makemigrations
+$ ./manage.py migrate
+```
+- Loput admin muutokset:
+```
+$ micro crm/admin.py
+from django.contrib import admin
+from . import models
+
+admin.site.register(models.Customer)
+```
+![Add file: Upload](Images/crm_add.jpg)
+
+- Voimme nyt käynnistää serverin ja nähdä uusi customer model adminissa 
+```
+$ ./manage.py runserver
+```
+- Asiakkaan lisämisen jälkeen näkymä näyttää tältä:
+![Add file: Upload](Images/customer_add.jpg)
+
+### c) Tee Djangon tuotantotyyppinen asennus omalle, paikalliselle virtuaalikoneellesi
+
+
+
+## Lähteet:
+Karvinen 2023: https://terokarvinen.com/2023/python-web-idea-to-production/#osaamistavoitteet/ Luettu 02.10.2023
+
+Karvinen 2022: https://terokarvinen.com/2022/django-instant-crm-tutorial/ Luettu 02.10.2023
+
+Karvinen 2022: https://terokarvinen.com/2022/deploy-django/ Luettu 02.10.2023
