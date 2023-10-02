@@ -18,4 +18,59 @@ Storage: 512GB SSD M.2 2280 PCIe® 3.0x4 NVMe®
 ## x) Lue ja tiivistä: 
 ### Karvinen 2023: Python Web - Idea to Production - 2023
 
-- 
+- Python weppipalvelu - ideasta tuotantoon toteutuksella pääsee rakentamaan weppipalvelu Pythonilla ja myös asentamaan sen julkiselle palvelimelle.
+- Se pystyy palvelemaan asiakkaita usealla eri laitteella moiteettomasti.
+- Käyttäjien ei tarvitse asentaa mitään.
+- Yhtäaikainen muokkas mahdollisuus käyttäjillä.
+- Aina uusin versio automaattisesti käytössä.
+
+### Karvinen 2022: Django 4 Instant Customer Database Tutorial
+
+- Opitaan luomaan asiakastietokannan web-käyttöliittymällä käyttäen Django 4.
+- Aluksi tehdään kehitysympärtön asennukset: asennetaan virtualenv: sudo apt-get -y install virtualenv,
+luodaan virtuaaliympäristö: virtualenv --system-site-packages -p python3 env/ ja lopuksi aktivoidaan virtuaaliympäristö: source env/bin/activate
+- Asennetaan Django, tämän jälkeen päästään luomaan uusi projekti, jonka jälkeen voidaan käynnistää kehityspalvelin seuraavasti --> ./manage.py runserver
+- Tässä vaiheessa voidaan siirtyä admin-käyttöliittymän asennukseen, joka onnistuu seuraavasti --> avataann admin-käyttöliittymä: http://127.0.0.1:8000/admin/, päivitetään kaikki tietokannat: ./manage.py makemigrations ja ./manage.py migrate ja lopuksi luodaan superkäyttäjä ./manage.py createsuperuser.
+- Lopuksi voidaan luoda uusia käyttäjiä ja asiakastietokantoja.
+
+### Karvinen 2022: Deploy Django 4 - Production Install
+
+- Opitaan julkaisemaan Python Djangolla luotuja verkkosovelluksia internetissä oikealla tuotantopalvelimella Apache 2.4:llä ja mod_wsgi:n avulla.
+- Vaaditaan, että perustaidot terminaalinkäytöstä on hallussa.
+
+### a) Asenna Django-kehitysympäristö
+
+- Aloitin tehtävän seuraamalla Teron tehtyjä ohjeita, jotka löytyvät https://terokarvinen.com/2022/django-instant-crm-tutorial/
+- Ohjeiden lukemisen jälkeen tein ensimmäisen toimeenpiteen, eli latasin Djangon:
+```
+$ sudo apt-get -y install virtualenv
+$ virtualenv --system-site-packages -p python3 env/
+```
+
+![Add file: Upload](Images/Django_install.jpg)
+
+- Tässä vaiheessa on hyvä tietää, että pipiä ei kannata käyttää sudo-komennon kanssa, sillä se voi aiheuttaa turvallisuusongelmia ja käyttöoikeusongelmia.  
+- Nyt voimme siirtyä uuteen virtuaaliympäristöön ja tehdä sen sisällä tarvittavat asennus toimenpiteet:
+```
+$ source env/bin/activate
+$ which pip /home/daniel/env/bin/pip
+```
+- Python-paketin lisääminen tekstitiedostoon, sisällön lataaminen ja version tarkastaminen:
+```
+$ micro requirements.txt
+$ cat requirements.txt
+
+$ pip install -r requirements.txt
+$ django-admin --version
+```
+![Add file: Upload](Images/requirements_django.jpg)
+
+Nyt voimme kokeilla toimiiko django seuraavasti:
+```
+$ django-admin startproject daniel
+
+$ cd daniel
+$ ./manage.py runserver
+```
+- Lopuksi menemme --> http://127.0.0.1:8000/
+![Add file: Upload](Images/test_django.jpg)
