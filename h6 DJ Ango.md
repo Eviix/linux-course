@@ -131,8 +131,75 @@ $ ./manage.py runserver
 ### c) Tee Djangon tuotantotyyppinen asennus omalle, paikalliselle virtuaalikoneellesi.
 
 - Luettuani artikkelin "Deploy Django 4 - Production Install", pääsin vihdoin aloittamaan seuraavan tehtävän.
-- 
+- Seurasin ohjeita ja loin alkuun pientä web sisältöä testausta varten:
 
+```
+$ cd
+$ mkdir -p publicwsgi/daniel/static/
+$ echo "hello world"|tee publicwsgi/daniel/static/index.html hello world
+```
+- Tämän jälkeen loin uuden virtualhostin seuraavasti:
+```
+$ sudoedit /etc/apache2/sites-available/daniel.conf
+```
+```
+<VirtualHost *:80>
+	Alias /static/ /home/daniel/publicwsgi/daniel/static/
+	<Directory /home/daniel/publicwsgi/daniel/static/>
+		Require all granted
+	</Directory>
+</VirtualHost>
+```
+![Add file: Upload](Images/webcontent_test.jpg)
+
+- Seuraavaksi laitoin päälle uuden sivun ja muut pois päältä:
+```
+$ sudo a2ensite teroco.conf
+$ sudo a2dissite 000-default.conf 
+```
+- Testasin myös configurea ja tarkistin, että kaikki toimii:
+```
+$ /sbin/apache2ctl configtest
+```
+- Lopuksi käynnistin apache2 uudelleen:
+```
+sudo systemctl restart apache2
+```
+![Add file: Upload](Images/a2ensite_a2dissite.jpg)
+
+- Aivan lopuksi testasin, että minulla on pääsy static tiedostoihin:
+
+![Add file: Upload](Images/static_test.jpg)
+
+### Djangon liittäminen
+
+- Hyödynnän aiempaa luotua Django-projektia ja lähden alkuun muokkaamaan VirtualHost configia käyttämällä Teron templateaw:
+```
+$ sudoedit /etc/apache2/sites-available/daniel.conf
+```
+![Add file: Upload](Images/virtualhost_templatee.jpg)
+
+- Seuraavaksi Apache2 WSGI moduulin asennus:
+```
+$ sudo apt-get -y install libapache2-mod-wsgi-py3
+```
+- Tehdään config testit ja tarkistetaan toimiiko se:
+```
+$ /sbin/apache2ctl configtest
+```
+- Apache2 uudelleen käynnistäminen:
+```
+sudo systemctl restart apache2
+```
+- Lopuksi tarkistetaan mitä tapahtuu:
+```
+curl -s localhost|grep title
+```
+- Seurasin ohjeita step by step, mutta silti jostain syystä minulle tuli 403 forbidden:
+
+![Add file: Upload](Images/403_forbidden.jpg)
+
+- Koitan saada tunnin aikana tämän selvitettyä, jos jollain muilla sattuisi olemaan sama errori.
 
 ## Lähteet:
 Karvinen 2023: https://terokarvinen.com/2023/python-web-idea-to-production/#osaamistavoitteet/ Luettu 02.10.2023
