@@ -30,32 +30,33 @@ Storage: 512GB SSD M.2 2280 PCIe® 3.0x4 NVMe®
 
 - "Hello, World!" on yksinkertainen ohjelma ja se on yleensä ensimmäinen asia, joka opetetaan millä tahansa ohjelmointikielellä ja sillä saadaan testattua myös, että ohjelmointiympäristö toimii oikein.
 - Toimiva Hello, World! muutamalla eri ohjelmointikielellä:
-    - Python3:
-        ````
-        $ cat hellotero.py
-        print("Hello Tero")
-        $ python3 hellotero.py
-        Hello Tero
-        ````
-    - Bash:
-        ````      
-        $ cat hellotero.sh
-        echo "Hello Tero"
-        $ bash hellotero.sh
-        Hello Tero
-        ````
-    - C:
-        ````
-        $ cat hellotero.c
-        #include <stdio.h>
-        int main()
-        {
-         printf("Hello Tero\n");
-        }
-        $ gcc hellotero.c -o helloteroc
-        $ ./helloteroc
-        Hello Tero
-        ````
+
+Python3:
+````
+$ cat hellotero.py
+print("Hello Tero")
+$ python3 hellotero.py
+Hello Tero
+````
+Bash:
+````      
+$ cat hellotero.sh
+echo "Hello Tero"
+$ bash hellotero.sh
+Hello Tero
+````
+C:
+````
+$ cat hellotero.c
+#include <stdio.h>
+int main()
+{
+printf("Hello Tero\n");
+}
+$ gcc hellotero.c -o helloteroc
+$ ./helloteroc
+Hello Tero
+````
 - Tästä voidaan nopeasti päätellä, että Python3 ja Bash vaatii vähemmän riviä koodia kuten esim. C.
 
 Lähde: Karvinen 2018: https://terokarvinen.com/2018/hello-python3-bash-c-c-go-lua-ruby-java-programming-languages-on-ubuntu-18-04/ Luettu 08.10.2023
@@ -69,9 +70,27 @@ Lähde: Karvinen 2018: https://terokarvinen.com/2018/hello-python3-bash-c-c-go-l
 - Testasin vielä, että javan ohjelmistoympäristö asentui ````$ javac````
 ![Add file: Upload](Images/javac.jpg)
 
-- Nyt päästään varsiniaseen tehtävään. Kokeilin ensiksi pythonilla, että miten hello world toimii. Käytin micro tekstieditoria ja loin sillä python.py nimisen tiedoston.
+- Nyt päästään varsiniaseen tehtävään. Kokeilin ensiksi pythonilla, että miten hello world toimii. Käytin micro tekstieditoria ja loin sillä helloworld.py nimisen tiedoston.
+````
+$ micro helloworld.py
+$ cat helloworld.py
+print("Hello, World!")
+$ python3 helloworld.py
+Hello, World!
+````
+![Add file: Upload](Images/helloworld_python.jpg)
 
-
-
-
-
+- Seuraavana vuorossa javan kokeilu:
+````
+$ cat helloworld.java   
+public class helloworld
+{
+ public static void main(String[] args)
+ {
+ System.out.println("Hello, World!");
+ }
+}
+$ javac helloworld.java
+$ java helloworld   
+Hello, World!
+````
