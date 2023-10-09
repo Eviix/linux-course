@@ -70,9 +70,8 @@ Lähde: Karvinen 2018: https://terokarvinen.com/2018/hello-python3-bash-c-c-go-l
 - Testasin vielä, että javan ohjelmistoympäristö asentui ````$ javac````
 ![Add file: Upload](Images/javac.jpg)
 
-- Nyt päästään varsiniaseen tehtävään. Kokeilin ensiksi pythonilla, että miten hello world toimii. Käytin micro tekstieditoria ja loin sillä helloworld.py nimisen tiedoston.
+- Nyt päästään varsiniaseen tehtävään. Kokeilin ensiksi pythonilla, että miten hello world toimii. Käytin micro tekstieditoria ja loin sillä helloworld.py nimisen tiedoston ````($ micro helloworld.py)````.
 ````
-$ micro helloworld.py
 $ cat helloworld.py
 print("Hello, World!")
 $ python3 helloworld.py
@@ -80,17 +79,31 @@ Hello, World!
 ````
 ![Add file: Upload](Images/helloworld_python.jpg)
 
-- Seuraavana vuorossa javan kokeilu:
+- Seuraavana vuorossa javan kokeilu ````($ micro HelloWorld.java)````:
 ````
-$ cat helloworld.java   
-public class helloworld
+$ cat HelloWorld.java   
+public class HelloWorld
 {
  public static void main(String[] args)
  {
  System.out.println("Hello, World!");
  }
 }
-$ javac helloworld.java
-$ java helloworld   
+$ javac HelloWorld.java
+$ java HelloWorld   
+Hello, World!
+````
+- Tässä kohdassa törmäsin outoon erroriin, sillä se valitti ````javac HelloWorld.java````, että ""class, interface, enum, or record expected". Koitin tehdä kaikkea, jotta error viestiä ei tulisi, mutta mikään ei tuntunut auttavan.
+![Add file: Upload](Images/javac_error.jpg)
+- Päätin jatkaa tehtävää ja siirtyä C:n kokeiluun ````($ micro helloworld.c)````:
+ ````
+$ cat helloworld.c
+#include <stdio.h>
+int main()
+{
+  printf("Hello, World!\n");
+}
+$ gcc helloworld.c -o helloworldc 
+$ ./helloworldc
 Hello, World!
 ````
