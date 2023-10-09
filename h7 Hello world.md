@@ -158,3 +158,42 @@ chmod +x update.sh
 ![Add file: Upload](Images/sh_test.jpg)
 
 ## e) Tee uusi komento Linuxiin
+- Hyödynsin tässä tehtävässä d) kohdassa tehtyä skriptiä. Varmistin ensiksi, että minulta löytyy ````/usr/local/bin````.
+
+- Tämän jälkeen loin microlla uuden tekstitiedoston nimeltä update.sh ja loin sinne uuden scriptin.
+
+````
+cd /usr/local/bin
+ls (kansiossa ei ollut vielä mitään)
+````
+- Tämän jälkeen tein kopion ````/scripts/update.sh````, jonka halusin siirtää ````/usr/local/bin```` ja annoin sille samalla oikeudet.
+````
+sudo cp ~/scripts/update.sh /usr/local/bin/
+sudo chmod +x /usr/local/bin/update.sh
+````
+- Tämän tehtyä pystyin ajamaan update.sh komentoa suoraan omasta kotihakemistosta.
+
+![Add file: Upload](Images/uusi_komento.jpg)
+
+## f) Intelligent intelligence
+
+- Päätin tässä ottaa ensimmäisen labra harjoitustyön, joka tuli kohdalleni: [syksy -21](https://terokarvinen.com/2021/final-lab-for-linux-server-course-linux-palvelimet-ict4tn021-3016/)
+- Alottaisin tämän komennoilla ````sudo apt-get update```` ja ````sudo apt-get upgrade````.
+- Lisätään käyttäjä ja annetaan sille sudo oikeudet: ````sudo adduser daniel```` ja ````sudo adduser daniel sudo````.
+- Siirryin kotihakemistoon ````cd```` ja loin lab.txt tiedoston --> micro lab.txt (oletan, että microa ei olla vielä asennettuna, joten ````sudo snap install micro --classic````).
+````
+Nimi: Daniel
+Linkki kotitehtäväpakettiin: ----------
+````
+- Asentaisin pwgenin: ````sudo apt install -y pwgen````. Tämän jälkeen voisin kirjoittaa, vaikka ````pwgen -s 20 10````, joka loisi 10 salasanaa, jotka ovat 20 merkkiä pitkiä.
+- Jos haluaisin suojata lab.txt tiedoston, niin tekisin näin: ````chmod 600 lab.txt````. Tämä antaa oikeudet vain tiedoston omistajalle eikä ulkopuoliset voi lukea sitä.
+
+## f) Labra Debian 12
+
+- Asensin labraa varten uuden Debian 12, johon en ollut tehnyt mitään, joten kyseessä oli täysin tyhjä virtuaalikone.
+  
+
+![Add file: Upload](Images/labra_debian12.jpg)
+
+## Lähteet: 
+- Karvinen 2018: https://terokarvinen.com/2018/hello-python3-bash-c-c-go-lua-ruby-java-programming-languages-on-ubuntu-18-04/ Luettu 08.10.2023
