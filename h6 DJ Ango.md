@@ -202,7 +202,7 @@ curl -s localhost|grep title
 - Koitan saada tunnin aikana tämän selvitettyä, jos jollain muilla sattuisi olemaan sama errori.
 
 ## Lähteet:
-Karvinen 2023: https://terokarvinen.com/2023/python-web-idea-to-production/#osaamistavoitteet/ Luettu 02.10.2023
+Karvinen 2018: https://terokarvinen.com/2018/hello-python3-bash-c-c-go-lua-ruby-java-programming-languages-on-ubuntu-18-04/ Luettu 08.10.2023
 
 Karvinen 2022: https://terokarvinen.com/2022/django-instant-crm-tutorial/ Luettu 02.10.2023
 
