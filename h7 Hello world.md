@@ -112,3 +112,49 @@ $ gcc helloworld.c -o helloworldc
 $ ./helloworldc
 Hello, World!
 ````
+![Add file: Upload](Images/c_test.jpg)
+
+## b) Käännä "Hei maailma" jollain muulla kielellä (kuin Python, Java, C).
+- Päätin kokeilla rubya tässä osiossa, eli aloitin normaaliin tapaan luomalla tekstitiedoston ````($ micro helloworld.rb)````:
+````
+$ cat helloworld.rb
+------------------
+puts "Hello, World!"
+------------------
+$ ruby helloworld.rb
+Hello, World!
+````
+- Tässä vaiheessa huomasin, että rubya ei ollut ollenkaan olemassa linuxissa, joten asensin sen komennolla ````$ sudo apt-get install ruby-full````.
+
+![Add file: Upload](Images/ruby_test.jpg)
+- Loppukommentiksi voisin sanoa, että ruby muistutti paljon pythonia lyhyen koodin takia. En ollut siis ennen rubya käyttänyt.
+
+## c) Python laskin.
+
+- Olin heti alussa tehnyt jo pythonin asennuksen komennolla: ````$ sudo apt-get install -y ipython3 openjdk-17-jdk````, joten se löytyi minulta jo ennastaan. ````$ ipython3```` käynnisti ohjelman.
+![Add file: Upload](Images/ipython3_test.jpg)
+
+## d) Tee shell script
+- Aloitin tehtävän tekemällä kotihakemistoon uuden kansion nimeltä "scripts":
+````
+cd
+mkdir scripts
+cd scripts
+````
+- Tämän jälkeen loin microlla uuden tekstitiedoston nimeltä update.sh ja loin sinne uuden scriptin.
+````
+#!/bin/bash
+
+echo "Päivitetään pakettilista..."
+sudo apt update
+echo "Pakettilista päivitetty."
+echo "Skripti suoritettu loppuun."
+````
+- Koitin suorittaa skriptin komennolla ````$ ./update.sh````, mutta sillä ei ollut oikeuksia suorittaa sitä.
+````
+chmod +x update.sh
+````
+- Nyt skripti toimii niin kuin halusinkin.
+![Add file: Upload](Images/sh_test.jpg)
+
+## e) Tee uusi komento Linuxiin
